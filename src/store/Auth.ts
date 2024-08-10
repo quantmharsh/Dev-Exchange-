@@ -97,6 +97,7 @@ export const useAuthStore = create<IAuthStore>()(
 
 			async createAccount(name: string, email: string, password: string) {
 				try {
+					//getting this create method from  AppWrite
 					await account.create(ID.unique(), email, password, name);
 					return {
 						success: true,
