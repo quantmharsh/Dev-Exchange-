@@ -1,4 +1,6 @@
+
 // Setting up our database 
+
 import { db } from "../name";
 import createAnswerCollection from "./answer.collection";
 import createCommentCollection from "./comment.collection";

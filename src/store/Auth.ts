@@ -77,7 +77,10 @@ export const useAuthStore = create<IAuthStore>()(
 						account.createJWT(),
 						// setting reputation az zero for deault
 					]);
-					if (!user.prefs?.reputation)
+					//creating the reputation preference in appwrite . which can be seen inside users
+					//creating this because we want to increase its count whenever user write answer or get upvotes
+					//we require this because reputation is deependent on multiple collections(answers , votes) so it is easy to update it using preferences 
+					if (!user.prefs?.reputation) 
 						await account.updatePrefs<UserPrefs>({
 							reputation: 0,
 						});
